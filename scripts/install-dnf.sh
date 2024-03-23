@@ -30,6 +30,7 @@ APPS=(
     "virt-manager"
     # Fonts
     "nerd-fonts"
+    "fira-code-fonts"
     # Programming
     "strace"
     "ltrace"
@@ -37,7 +38,12 @@ APPS=(
     "python3-pip"
     # Pano requirements
     "libgda-sqlite"
+    # Media downloader
+    "python3-streamlink"
 )
+
+# Create symlink from fastfetch to neofetch
+ln -s /usr/bin/fastfetch /usr/bin/neofetch
 
 for app in "${APPS[@]}"
 do
