@@ -11,6 +11,8 @@ SERVICES=(
     "nvidia-suspend.service"
     "nvidia-resume.service"
     "nvidia-powerd.service"
+    # Syncthing 
+    "syncthing-resume.service"
 )
 
 for service in "${SERVICES[@]}"

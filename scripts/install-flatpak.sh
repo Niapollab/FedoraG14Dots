@@ -6,6 +6,8 @@ APPS=(
     "org.videolan.VLC"
     # Photo editor
     "org.gimp.GIMP"
+    # Vector graphics editor
+    "org.inkscape.Inkscape"
     # Social networks
     "org.telegram.desktop"
     "io.github.spacingbat3.webcord"
@@ -35,6 +37,8 @@ APPS=(
     "org.tenacityaudio.Tenacity"
     # Reverse utils
     "org.ghidra_sre.Ghidra"
+    # Markdown editor
+    "md.obsidian.Obsidian"
 )
 
 for app in "${APPS[@]}"
