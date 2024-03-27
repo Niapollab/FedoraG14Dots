@@ -42,8 +42,6 @@ APPS=(
     "python3-streamlink"
     # Fuzzy search
     "fzf"
-    # P2P file sync
-    "syncthing"
 )
 
 # Create symlink from fastfetch to neofetch

@@ -39,6 +39,8 @@ APPS=(
     "org.ghidra_sre.Ghidra"
     # Markdown editor
     "md.obsidian.Obsidian"
+    # P2P file sync
+    "me.kozec.syncthingtk"
 )
 
 for app in "${APPS[@]}"
