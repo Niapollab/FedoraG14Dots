@@ -43,6 +43,15 @@ APPS=(
     "me.kozec.syncthingtk"
 )
 
+# Add syncthin-gtk to autostart
+tee $HOME/.config/autostart/me.kozec.syncthingtk.desktop > /dev/null << EOF
+[Desktop Entry]
+Type=Application
+Name=me.kozec.syncthingtk
+Exec=flatpak run --command=syncthing-gtk me.kozec.syncthingtk --minimized
+X-Flatpak=me.kozec.syncthingtk
+EOF
+
 for app in "${APPS[@]}"
 do
     flatpak install -y flathub "$app"
