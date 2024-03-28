@@ -10,6 +10,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 # zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 
+# zsh-fzf-history-search
+git clone https://github.com/joshskidmore/zsh-fzf-history-search.git $ZSH_CUSTOM/plugins/zsh-fzf-history-search
+
 # GEF
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 rm -f "~/.gdbinit"
