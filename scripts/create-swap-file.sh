@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
-MEMORY=`awk '/MemTotal/{print $2}' /proc/meminfo`
+MEMORY=$(awk '/MemTotal/{print $2}' /proc/meminfo)
 FILE_SIZE=$(echo "scale=0;$MEMORY + sqrt($MEMORY / 1024 / 1024) * 1024 * 1024" | bc)
 
-sudo dd if=/dev/zero of=/swapfile bs=1K count=$FILE_SIZE status=progress
+sudo dd if=/dev/zero of=/swapfile bs=1K count="$FILE_SIZE" status=progress
 sudo chmod 600 /swapfile
 
 sudo mkswap -U clear /swapfile

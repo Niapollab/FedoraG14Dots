@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 SERVICES=(
@@ -7,11 +7,11 @@ SERVICES=(
     # supergfxd
     "supergfxd.service"
     # nvidia
-    "nvidia-hibernate.service" 
+    "nvidia-hibernate.service"
     "nvidia-suspend.service"
     "nvidia-resume.service"
     "nvidia-powerd.service"
-    # Syncthing 
+    # Syncthing
     "syncthing-resume.service"
 )
 

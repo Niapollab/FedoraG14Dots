@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 APPS=(
@@ -44,7 +44,7 @@ APPS=(
 )
 
 # Add syncthin-gtk to autostart
-tee $HOME/.config/autostart/me.kozec.syncthingtk.desktop > /dev/null << EOF
+tee "$HOME/.config/autostart/me.kozec.syncthingtk.desktop" > /dev/null << EOF
 [Desktop Entry]
 Type=Application
 Name=me.kozec.syncthingtk
