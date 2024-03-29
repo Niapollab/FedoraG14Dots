@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh installation.
+# Path to oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 
 # Theme
