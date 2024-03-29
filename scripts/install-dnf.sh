@@ -42,6 +42,9 @@ APPS=(
     "python3-streamlink"
     # Fuzzy search
     "fzf"
+    # OpenH264 (for live-streams viewing)
+    "gstreamer1-plugin-openh264"
+    "mozilla-openh264"
 )
 
 # Create symlink from fastfetch to neofetch
