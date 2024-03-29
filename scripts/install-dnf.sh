@@ -28,6 +28,12 @@ APPS=(
     # Virtualization
     "docker"
     "virt-manager"
+    "libvirt"
+    "virt-install"
+    "virt-viewer"
+    "guestfs-tools"
+    "tuned"
+    "virtio-win"
     # Fonts
     "nerd-fonts"
     "fira-code-fonts"
