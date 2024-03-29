@@ -5,7 +5,7 @@
 1. Use `flatpak remote-info --log <repo> <app-id>` for getting `<commit>`.
 
 > [!NOTE]
-> For example `<repo>` will be `flathub`, `<app-id>` will be `io.github.spacingbat3.webcord`. 
+> For example `<repo>` will be `flathub`, `<app-id>` will be `io.github.spacingbat3.webcord`.
 
 2. Use `sudo flatpak update --commit=<commit> <app-id>` for reverting.
 
@@ -17,8 +17,15 @@
 Use `flatpak override --user --env=GTK_THEME=<theme-name> <app-id>` for changing theme for the app.
 
 > [!NOTE]
-> For example `<theme-name>` will be `Adwaita:dark`, `<app-id>` will be `org.libreoffice.LibreOffice`. 
+> For example `<theme-name>` will be `Adwaita:dark`, `<app-id>` will be `org.libreoffice.LibreOffice`.
 
 ## Launch GEF from GDB
 
 Use `source ~/.gef.py` in GDB prompt to launch GEF.
+
+## Fix `Permission denied` in Docker volumes
+
+Add `:z` to volume definition. [See](https://stackoverflow.com/a/31334443) for details.
+
+> [!NOTE]
+> For example `-v"/path/host:/path/container:z"`.
