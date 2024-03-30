@@ -19,6 +19,8 @@ APPS=(
     "fastfetch"
     # Cursor theme
     "bibata-cursor-themes"
+    # GTK apps theme
+    "adw-gtk3-theme"
     # Gnome theme editor
     "nwg-look"
     # Internal VPN
