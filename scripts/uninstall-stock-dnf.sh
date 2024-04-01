@@ -9,6 +9,7 @@ APPS=(
     "libreoffice-writer"
     "libreoffice-impress"
     "gnome-boxes"
+    "PackageKit-command-not-found"
 )
 
 for app in "${APPS[@]}"
