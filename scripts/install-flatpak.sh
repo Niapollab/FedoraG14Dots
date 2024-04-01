@@ -43,6 +43,11 @@ APPS=(
     "me.kozec.syncthingtk"
 )
 
+for app in "${APPS[@]}"
+do
+    flatpak install -y flathub "$app"
+done
+
 # Add syncthin-gtk to autostart
 tee "$HOME/.config/autostart/me.kozec.syncthingtk.desktop" > /dev/null << EOF
 [Desktop Entry]
@@ -52,7 +57,11 @@ Exec=flatpak run --command=syncthing-gtk me.kozec.syncthingtk --minimized
 X-Flatpak=me.kozec.syncthingtk
 EOF
 
-for app in "${APPS[@]}"
-do
-    flatpak install -y flathub "$app"
-done
+# Install 2x scale for Ghidra
+sed 's/\(VMARGS_LINUX=-Dsun.java2d.uiScale=\)[0-9]*/\12/g' -i ~/.var/app/org.ghidra_sre.Ghidra/config/ghidra.properties
+
+# Install dark theme for Ghidra
+GHIDRA_THEMES_PATH="$(find "$HOME" -name ".ghidra_*" | head -1)/themes"
+GHIDRA_DARK_URL=$(curl -sL https://api.github.com/repos/zackelia/ghidra-dark-theme/releases | sed -n 's/.*\"browser_download_url\"\s*:\s*\"\(.*\)\"/\1/p' | grep '.theme' | head -1)
+
+curl -sL "$GHIDRA_DARK_URL" -o "$GHIDRA_THEMES_PATH/ghidra-dark.theme"
