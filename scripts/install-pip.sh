@@ -4,6 +4,8 @@ set -e
 APPS=(
     # Gnome extensions manager
     "gnome-extensions-cli"
+    # Pywal
+    "pywal"
 )
 
 for app in "${APPS[@]}"

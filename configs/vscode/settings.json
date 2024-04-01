@@ -1,4 +1,7 @@
 {
+    // Theme
+    "workbench.colorTheme": "Wal",
+
     // MenuBar
     "window.menuBarVisibility": "toggle",
 

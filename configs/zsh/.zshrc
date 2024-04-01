@@ -32,6 +32,9 @@ else
   export EDITOR='micro'
 fi
 
+# Set pywal theme for Gnome Terminal
+[ ! -z ${GNOME_TERMINAL_SERVICE} ] && (cat ~/.cache/wal/sequences &)
+
 # fzf key bindings
 source /usr/share/fzf/shell/key-bindings.zsh
 
