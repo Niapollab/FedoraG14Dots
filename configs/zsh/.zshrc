@@ -27,9 +27,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Set preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='code'
-else
   export EDITOR='micro'
+else
+  export EDITOR='code'
 fi
 
 # Set pywal theme for Gnome Terminal
