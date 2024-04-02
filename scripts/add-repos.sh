@@ -13,6 +13,9 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 # VirtIO
 sudo curl -sL https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo -o /etc/yum.repos.d/virtio-win.repo
 
+# Docker CE
+sudo curl -sL 'https://download.docker.com/linux/fedora/docker-ce.repo' -o '/etc/yum.repos.d/docker-ce.repo'
+
 CORP_REPOS=(
     # Asus tools
     "lukenukem/asus-linux"

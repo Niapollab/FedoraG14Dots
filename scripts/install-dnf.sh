@@ -29,6 +29,7 @@ APPS=(
     "android-tools"
     # Virtualization
     "docker"
+    "docker-buildx-plugin"
     "virt-manager"
     "libvirt"
     "virt-install"
@@ -54,6 +55,9 @@ APPS=(
     "gstreamer1-plugin-openh264"
     "mozilla-openh264"
 )
+
+# Enable buildx plugin for Docker
+docker buildx install
 
 # Create symlink from fastfetch to neofetch
 ln -s /usr/bin/fastfetch /usr/bin/neofetch
