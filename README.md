@@ -25,7 +25,7 @@ Use `source ~/.gef.py` in GDB prompt to launch GEF.
 
 ## Fix `Permission denied` in Docker volumes
 
-Add `:z` to volume definition. [See](https://stackoverflow.com/a/31334443) for details.
+Add `:Z` to volume definition. [See](https://stackoverflow.com/a/31334443) for details.
 
 > [!NOTE]
-> For example `-v"/path/host:/path/container:z"`.
+> For example `-v"/path/host:/path/container:Z"`.
