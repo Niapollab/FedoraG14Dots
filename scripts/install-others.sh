@@ -34,3 +34,12 @@ curl -sL "$PYWALFOX_PAGE" -o '/tmp/pywalfox.xpi'
 firefox '/tmp/pywalfox.xpi'
 read -r -p "[@] Enter any key when extension will be installed"
 rm '/tmp/pywalfox.xpi'
+
+# Install ublock-origin to Firefox
+UBLOCK_ORIGIN_PAGE="$(curl -sL 'https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/' | sed -n 's#.*\"https://addons.mozilla.org/firefox/downloads/file/\(.*\)\"#https://addons.mozilla.org/firefox/downloads/file/\1#p')"
+UBLOCK_ORIGIN_PAGE="${UBLOCK_ORIGIN_PAGE%%\"*}"
+
+curl -sL "$UBLOCK_ORIGIN_PAGE" -o '/tmp/ublock_origin.xpi'
+firefox '/tmp/ublock_origin.xpi'
+read -r -p "[@] Enter any key when extension will be installed"
+rm '/tmp/ublock_origin.xpi'
