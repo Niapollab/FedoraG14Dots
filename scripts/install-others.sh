@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 # Oh-my-zsh
@@ -23,3 +23,14 @@ PWNDBG_URL=$(curl -sL https://api.github.com/repos/pwndbg/pwndbg/releases | sed 
 curl -sL "$PWNDBG_URL" -o "/tmp/pwndbg.rpm"
 sudo dnf install -y "/tmp/pwndbg.rpm"
 rm -f "/tmp/pwndbg.rpm"
+
+# Install Pywalfox to Firefox
+pywalfox install
+
+PYWALFOX_PAGE="$(curl -sL 'https://addons.mozilla.org/en-US/firefox/addon/pywalfox/' | sed -n 's#.*\"https://addons.mozilla.org/firefox/downloads/file/\(.*\)\"#https://addons.mozilla.org/firefox/downloads/file/\1#p')"
+PYWALFOX_PAGE="${PYWALFOX_PAGE%%\"*}"
+
+curl -sL "$PYWALFOX_PAGE" -o '/tmp/pywalfox.xpi'
+firefox '/tmp/pywalfox.xpi'
+read -r -p "[@] Enter any key when extension will be installed"
+rm '/tmp/pywalfox.xpi'
