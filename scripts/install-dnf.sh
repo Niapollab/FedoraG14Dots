@@ -54,6 +54,8 @@ APPS=(
     # OpenH264 (for live-streams viewing)
     "gstreamer1-plugin-openh264"
     "mozilla-openh264"
+    # System backups
+    "timeshift"
 )
 
 # Enable buildx plugin for Docker

@@ -41,6 +41,8 @@ APPS=(
     "md.obsidian.Obsidian"
     # P2P file sync
     "me.kozec.syncthingtk"
+    # Tor browser
+    "org.torproject.torbrowser-launcher"
 )
 
 for app in "${APPS[@]}"
