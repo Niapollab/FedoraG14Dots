@@ -43,6 +43,8 @@ APPS=(
     "me.kozec.syncthingtk"
     # Tor browser
     "org.torproject.torbrowser-launcher"
+    # RDP client
+    "org.remmina.Remmina"
 )
 
 for app in "${APPS[@]}"

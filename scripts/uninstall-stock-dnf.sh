@@ -10,6 +10,7 @@ APPS=(
     "libreoffice-impress"
     "gnome-boxes"
     "PackageKit-command-not-found"
+    "gnome-connections"
 )
 
 for app in "${APPS[@]}"
