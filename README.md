@@ -29,3 +29,10 @@ Add `:Z` to volume definition. [See](https://stackoverflow.com/a/31334443) for d
 
 > [!NOTE]
 > For example `-v"/path/host:/path/container:Z"`.
+
+## Find related package by filename
+
+Use `rpm -qf <filename>` to find related package.
+
+> [!NOTE]
+> For example `rpm -qf /usr/bin/zsh`.
