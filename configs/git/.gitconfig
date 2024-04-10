@@ -1,0 +1,24 @@
+[init]
+	defaultBranch = master
+
+[core]
+	longpaths = true
+	autocrlf = input
+	editor = micro
+	pager = less -FRX
+
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	fsw = "!__git_fsw() { BRANCHES=\"$(git branch $@)\"; SELECTED_BRANCH=\"$([ $? -eq 0 ] && echo \"$BRANCHES\" | fzf)\"; [ $? -eq 0 ] && git switch \"${SELECTED_BRANCH##* }\"; }; __git_fsw"
+
+[push]
+	autoSetupRemote = true
+
+[gpg]
+	format = ssh
+
+[commit]
+	gpgSign = true
+
+[tag]
+	gpgSign = true
