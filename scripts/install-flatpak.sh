@@ -8,6 +8,8 @@ APPS=(
     "org.gimp.GIMP"
     # Vector graphics editor
     "org.inkscape.Inkscape"
+    # Video editor
+    "org.shotcut.Shotcut"
     # Social networks
     "org.telegram.desktop"
     "io.github.spacingbat3.webcord"
