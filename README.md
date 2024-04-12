@@ -36,3 +36,10 @@ Use `rpm -qf <filename>` to find related package.
 
 > [!NOTE]
 > For example `rpm -qf /usr/bin/zsh`.
+
+## Lauch application in `dGPU` mode from console
+
+Use `__GLX_VENDOR_LIBRARY_NAME=nvidia __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only <command> <arguments>` to lauch application in dGPU mode.
+
+> [!NOTE]
+> For example `__GLX_VENDOR_LIBRARY_NAME=nvidia __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only firefox`.
