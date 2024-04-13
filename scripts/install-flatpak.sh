@@ -47,6 +47,8 @@ APPS=(
     "org.torproject.torbrowser-launcher"
     # RDP client
     "org.remmina.Remmina"
+    # Games
+    "org.gnome.Mines"
 )
 
 for app in "${APPS[@]}"
