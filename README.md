@@ -44,3 +44,11 @@ Use `dgpu <command> <arguments>` to lauch application in dGPU mode.
 > [!NOTE]
 > For example `dgpu firefox`.
 > See [zsh aliases](./configs/zsh/.zsh_aliases) for additional details.
+
+## Uneject media device
+
+Use `eject -t <device>` for connect media devices back after ejecting process.
+
+> [!NOTE]
+> For example `eject -t /dev/sda`.
+> Use `udisksctl status` or `lsblk` for getting device path.
