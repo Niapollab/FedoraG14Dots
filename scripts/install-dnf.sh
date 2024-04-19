@@ -6,7 +6,7 @@ APPS=(
     "kernel-devel"
     "akmod-nvidia"
     "xorg-x11-drv-nvidia-cuda"
-    # Asus toolsa
+    # Asus tools
     "asusctl"
     "supergfxctl"
     "asusctl-rog-gui"
@@ -56,6 +56,10 @@ APPS=(
     "mozilla-openh264"
     # System backups
     "timeshift"
+    # Extended cat util
+    "bat"
+    # Extended ls util
+    "eza"
 )
 
 # Enable buildx plugin for Docker
