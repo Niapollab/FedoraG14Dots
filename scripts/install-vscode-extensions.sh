@@ -28,6 +28,8 @@ EXTENSIONS=(
     "timonwong.shellcheck"
     # C++
     "ms-vscode.cpptools"
+    # PDF Reader
+    "tomoki1207.pdf"
 )
 
 for extension in "${EXTENSIONS[@]}"
