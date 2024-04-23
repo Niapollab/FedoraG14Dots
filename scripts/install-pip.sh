@@ -7,6 +7,8 @@ APPS=(
     # Pywal
     "pywal"
     "pywalfox"
+    # Reverse
+    "frida-tools"
 )
 
 for app in "${APPS[@]}"

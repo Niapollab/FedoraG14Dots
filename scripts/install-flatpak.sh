@@ -41,6 +41,7 @@ APPS=(
     "org.tenacityaudio.Tenacity"
     # Reverse utils
     "org.ghidra_sre.Ghidra"
+    "com.github.skylot.jadx"
     # Markdown editor
     "md.obsidian.Obsidian"
     # P2P file sync
