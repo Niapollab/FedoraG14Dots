@@ -60,6 +60,8 @@ APPS=(
     "bat"
     # Extended ls util
     "eza"
+    # Battery profiler
+    "powertop"
 )
 
 # Enable buildx plugin for Docker
