@@ -9,6 +9,8 @@ APPS=(
     "pywalfox"
     # Reverse
     "frida-tools"
+    # Python debugger
+    "debugpy"
 )
 
 for app in "${APPS[@]}"
