@@ -28,7 +28,7 @@ Use `source ~/.gef.py` in GDB prompt to launch GEF.
 Add `:Z` to volume definition. [See](https://stackoverflow.com/a/31334443) for details.
 
 > [!NOTE]
-> For example `-v"/path/host:/path/container:Z"`.
+> For example `-v "/path/host:/path/container:Z"`.
 
 ## Find related package by filename
 
@@ -78,3 +78,7 @@ Edit file `~/.local/share/gnome-shell/extensions/<extension-id>/metadata.json`. 
 >        "40.0"
 >    ]
 > ```
+
+## Install beta Nvidia drivers
+
+Use `sudo dnf -y --enablerepo=rpmfusion-nonfree-rawhide update "*nvidia*"` to install beta Nvidia drivers.
