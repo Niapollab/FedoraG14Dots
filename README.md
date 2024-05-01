@@ -56,3 +56,25 @@ Use `eject -t <device>` for connect media devices back after ejecting process.
 ## Disable Gnome shell extension version validation
 
 Use `gsettings set org.gnome.shell disable-extension-version-validation true` to disable Gnome shell extension version validation.
+
+## Add support your Gnome shell version for specific extension
+
+Edit file `~/.local/share/gnome-shell/extensions/<extension-id>/metadata.json`. Find key `shell-version` and add your version (may be founded by executing `gnome-shell --version` in terminal)
+
+> [!NOTE]
+> For example, replace
+>
+> ```json
+>    "shell-version": [
+>        "3.38",
+>    ]
+> ```
+>
+> To
+>
+> ```json
+>    "shell-version": [
+>        "3.38",
+>        "40.0"
+>    ]
+> ```
