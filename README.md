@@ -52,3 +52,7 @@ Use `eject -t <device>` for connect media devices back after ejecting process.
 > [!NOTE]
 > For example `eject -t /dev/sda`.
 > Use `udisksctl status` or `lsblk` for getting device path.
+
+## Disable Gnome shell extension version validation
+
+Use `gsettings set org.gnome.shell disable-extension-version-validation true` to disable Gnome shell extension version validation.
