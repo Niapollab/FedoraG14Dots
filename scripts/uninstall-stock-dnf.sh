@@ -2,7 +2,6 @@
 set -e
 
 APPS=(
-    "cheese"
     "mediawriter"
     "gnome-tour"
     "libreoffice-calc"

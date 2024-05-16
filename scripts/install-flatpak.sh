@@ -35,8 +35,6 @@ APPS=(
     "io.github.realmazharhussain.GdmSettings"
     "ca.desrt.dconf-editor"
     "com.mattjakeman.ExtensionManager"
-    # Webcamera checker
-    "org.gnome.Cheese"
     # Audio editor
     "org.tenacityaudio.Tenacity"
     # Reverse utils
