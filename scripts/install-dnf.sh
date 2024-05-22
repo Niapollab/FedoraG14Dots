@@ -45,6 +45,8 @@ APPS=(
     "ltrace"
     "dotnet-sdk-8.0"
     "python3-pip"
+    "rust"
+    "cargo"
     # Pano requirements
     "libgda-sqlite"
     # Media downloader
