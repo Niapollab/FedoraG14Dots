@@ -30,6 +30,8 @@ EXTENSIONS=(
     "ms-vscode.cpptools"
     # PDF Reader
     "tomoki1207.pdf"
+    # Rust
+    "1YiB.rust-bundle"
 )
 
 for extension in "${EXTENSIONS[@]}"
