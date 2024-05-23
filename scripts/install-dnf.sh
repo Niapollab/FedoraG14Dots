@@ -45,8 +45,7 @@ APPS=(
     "ltrace"
     "dotnet-sdk-8.0"
     "python3-pip"
-    "rust"
-    "cargo"
+    "rustup"
     # Pano requirements
     "libgda-sqlite"
     # Media downloader
@@ -71,6 +70,9 @@ docker buildx install
 
 # Create symlink from fastfetch to neofetch
 ln -s /usr/bin/fastfetch /usr/bin/neofetch
+
+# Initialize Rust
+rustup-init -y
 
 for app in "${APPS[@]}"
 do
