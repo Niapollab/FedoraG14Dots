@@ -42,7 +42,7 @@ APPS=(
     "com.github.skylot.jadx"
     # Markdown editor
     "md.obsidian.Obsidian"
-    "com.toolstack.Folio"
+    "org.kde.ghostwriter"
     # P2P file sync
     "me.kozec.syncthingtk"
     # Tor browser
