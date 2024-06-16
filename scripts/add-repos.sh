@@ -30,6 +30,8 @@ CORP_REPOS=(
     "che/nerd-fonts"
     # Nwg-look
     "tofik/nwg-shell"
+    # Scrcpy
+    "zeno/scrcpy"
 )
 
 for repo in "${CORP_REPOS[@]}"

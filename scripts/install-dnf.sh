@@ -63,6 +63,8 @@ APPS=(
     "eza"
     # Battery profiler
     "powertop"
+    # Android screen mirroring
+    "scrcpy"
 )
 
 # Enable buildx plugin for Docker
