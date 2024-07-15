@@ -13,6 +13,9 @@ git clone 'https://github.com/zsh-users/zsh-autosuggestions.git' "$ZSH_CUSTOM/pl
 # zsh-fzf-history-search
 git clone 'https://github.com/joshskidmore/zsh-fzf-history-search.git' "$ZSH_CUSTOM/plugins/zsh-fzf-history-search"
 
+# Zed
+curl https://zed.dev/install.sh | sh
+
 # GEF
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 rm -f "$HOME/.gdbinit"
