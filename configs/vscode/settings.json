@@ -28,5 +28,15 @@
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.pytestParameters": true,
-    "python.analysis.inlayHints.callArgumentNames": "partial"
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+
+    // Markdown
+    "markdownlint.config": {
+        "MD033": {
+            "allowed_elements": [
+                "p",
+                "img"
+            ]
+        }
+    }
 }
