@@ -46,6 +46,7 @@ APPS=(
     "dotnet-sdk-8.0"
     "python3-pip"
     "rustup"
+    "nodejs-npm"
     # Pano requirements
     "libgda-sqlite"
     # Media downloader
