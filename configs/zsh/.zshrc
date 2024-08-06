@@ -35,6 +35,11 @@ fi
 # Set pywal theme for Gnome Terminal
 [ ! -z ${GNOME_TERMINAL_SERVICE} ] && (cat ~/.cache/wal/sequences &)
 
+# Load pyenv if installed
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 # fzf key bindings
 source /usr/share/fzf/shell/key-bindings.zsh
 

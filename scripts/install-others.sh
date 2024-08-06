@@ -16,6 +16,19 @@ git clone 'https://github.com/joshskidmore/zsh-fzf-history-search.git' "$ZSH_CUS
 # Zed
 curl https://zed.dev/install.sh | sh
 
+# Pyenv
+git clone 'https://github.com/pyenv/pyenv.git' "$HOME/.pyenv"
+
+sudo tee /etc/profile.d/pyenv-in-path.sh > /dev/null << EOF
+export PYENV_ROOT="\$HOME/.pyenv"
+PYENV_PATH="\$PYENV_ROOT/bin"
+
+case "\$PATH" in
+    *"\$PYENV_PATH"* ) true ;;
+    * ) PATH="\$PATH:\$PYENV_PATH" ;;
+esac
+EOF
+
 # GEF
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 rm -f "$HOME/.gdbinit"
