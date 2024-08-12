@@ -66,6 +66,9 @@ APPS=(
     "powertop"
     # Android screen mirroring
     "scrcpy"
+    # Gaming
+    "portproton"
+    "steam"
 )
 
 # Enable buildx plugin for Docker

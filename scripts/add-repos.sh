@@ -32,6 +32,8 @@ CORP_REPOS=(
     "tofik/nwg-shell"
     # Scrcpy
     "zeno/scrcpy"
+    # PortProton
+    "boria138/portproton"
 )
 
 for repo in "${CORP_REPOS[@]}"
