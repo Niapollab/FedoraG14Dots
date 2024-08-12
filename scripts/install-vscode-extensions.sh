@@ -32,6 +32,7 @@ EXTENSIONS=(
     "tomoki1207.pdf"
     # Rust
     "1YiB.rust-bundle"
+    "fill-labs.dependi"
 )
 
 for extension in "${EXTENSIONS[@]}"
