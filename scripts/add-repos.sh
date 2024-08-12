@@ -34,6 +34,8 @@ CORP_REPOS=(
     "zeno/scrcpy"
     # PortProton
     "boria138/portproton"
+    # Howdy
+    "principis/howdy"
 )
 
 for repo in "${CORP_REPOS[@]}"

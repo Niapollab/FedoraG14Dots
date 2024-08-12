@@ -82,3 +82,35 @@ Edit file `~/.local/share/gnome-shell/extensions/<extension-id>/metadata.json`. 
 ## Install beta Nvidia drivers
 
 Use `sudo dnf -y --enablerepo=rpmfusion-nonfree-rawhide update "*nvidia*"` to install beta Nvidia drivers.
+
+## Howdy SELinux problems
+
+Create file `howdy.te`
+
+```text
+module howdy 1.0;
+
+require {
+    type lib_t;
+    type xdm_t;
+    type v4l_device_t;
+    type sysctl_vm_t;
+    class chr_file map;
+    class file { create getattr open read write };
+    class dir add_name;
+}
+
+#============= xdm_t ==============
+allow xdm_t lib_t:dir add_name;
+allow xdm_t lib_t:file { create write };
+allow xdm_t sysctl_vm_t:file { getattr open read };
+allow xdm_t v4l_device_t:chr_file map;
+```
+
+Then you can compile and insert it
+
+```shell
+checkmodule -M -m -o howdy.mod howdy.te
+semodule_package -o howdy.pp -m howdy.mod
+semodule -i howdy.pp
+```

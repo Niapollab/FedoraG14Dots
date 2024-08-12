@@ -69,6 +69,8 @@ APPS=(
     # Gaming
     "portproton"
     "steam"
+    # Windows Hello
+    "howdy"
 )
 
 # Enable buildx plugin for Docker
