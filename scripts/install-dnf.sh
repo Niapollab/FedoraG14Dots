@@ -30,6 +30,7 @@ APPS=(
     # Virtualization
     "docker"
     "docker-buildx-plugin"
+    "docker-compose-plugin"
     "virt-manager"
     "libvirt"
     "virt-install"
