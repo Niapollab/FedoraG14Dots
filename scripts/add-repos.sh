@@ -21,6 +21,9 @@ sudo curl -sL https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo -o
 # Docker CE
 sudo curl -sL 'https://download.docker.com/linux/fedora/docker-ce.repo' -o '/etc/yum.repos.d/docker-ce.repo'
 
+# Nvidia Docker toolkit (https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+sudo curl -sL https://nvidia.github.io/libnvidia-container/centos8/libnvidia-container.repo -o /etc/yum.repos.d/nvidia-container-toolkit.repo
+
 CORP_REPOS=(
     # Asus tools
     "lukenukem/asus-linux"

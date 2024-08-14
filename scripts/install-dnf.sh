@@ -6,6 +6,7 @@ APPS=(
     "kernel-devel"
     "akmod-nvidia"
     "xorg-x11-drv-nvidia-cuda"
+    "nvidia-container-toolkit"
     # Asus tools
     "asusctl"
     "supergfxctl"
