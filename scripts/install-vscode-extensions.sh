@@ -33,6 +33,8 @@ EXTENSIONS=(
     # Rust
     "1YiB.rust-bundle"
     "fill-labs.dependi"
+    # ChatGPT Integration
+    "genieai.chatgpt-vscode"
 )
 
 for extension in "${EXTENSIONS[@]}"

@@ -38,5 +38,10 @@
                 "img"
             ]
         }
-    }
+    },
+
+    // ChatGPT Integration
+    "genieai.personalizedName": "Claire",
+    "genieai.openai.apiBaseUrl": "http://localhost:1337",
+    "genieai.openai.model": "gpt-4"
 }
