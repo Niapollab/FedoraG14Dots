@@ -35,6 +35,7 @@ EXTENSIONS=(
     "fill-labs.dependi"
     # ChatGPT Integration
     "genieai.chatgpt-vscode"
+    "Codeium.codeium"
 )
 
 for extension in "${EXTENSIONS[@]}"
