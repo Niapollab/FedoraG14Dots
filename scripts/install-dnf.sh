@@ -73,6 +73,8 @@ APPS=(
     "steam"
     # Windows Hello
     "howdy"
+    # SSH autoconnect
+    "autossh"
 )
 
 # Enable buildx plugin for Docker

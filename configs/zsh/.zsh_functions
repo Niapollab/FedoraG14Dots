@@ -1,0 +1,28 @@
+serveo() {
+    # Establishes a reverse proxy tunnel to serveo.net.
+    #
+    # Parameters:
+    #   local_port (int): The local port to use for the tunnel. Defaults to 8000.
+    #   username (str): The username to use for the tunnel. Defaults to the current user.
+    #   remote_port (int): The remote port to use for the tunnel. Defaults to 80.
+    #
+    # Returns:
+    #   str: The local port, username, and remote port used for the tunnel, separated by spaces.
+
+    local local_port
+    local username
+    local remote_port
+    local ssh_command
+
+    local_port="${1-8000}"
+    username="${2-$(whoami)}"
+    remote_port="${3-80}"
+
+    if command -v autossh >/dev/null 2>&1; then
+        ssh_command="autossh -M 0"
+    else
+        ssh_command="ssh"
+    fi
+
+    eval "$ssh_command" -R "$username":"$remote_port":localhost:"$local_port" serveo.net
+}

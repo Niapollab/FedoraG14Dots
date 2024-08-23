@@ -45,3 +45,6 @@ source /usr/share/fzf/shell/key-bindings.zsh
 
 # Aliases
 source ~/.zsh_aliases
+
+# Functions
+source ~/.zsh_functions
