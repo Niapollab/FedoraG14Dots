@@ -114,3 +114,29 @@ checkmodule -M -m -o howdy.mod howdy.te
 semodule_package -o howdy.pp -m howdy.mod
 semodule -i howdy.pp
 ```
+
+## Run X11 Docker applications
+
+1. Provide access to `xhost` for current user or root:
+
+    For current user:
+
+    ```shell
+    xhost "+SI:localuser:$(id -un)"
+    ```
+
+    For root:
+
+    ```shell
+    xhost "+SI:localuser:$(id -un 0)"
+    ```
+
+2. Add parameters to `docker run` command:
+
+    ```shell
+    -e "DISPLAY=$DISPLAY" \
+    -v "/tmp/.X11-unix:/tmp/.X11-unix:Z"
+    ```
+
+> [!NOTE]
+> Add `-u="$(id -u):$(id -g)"` if you use current user instead of root.
