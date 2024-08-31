@@ -68,3 +68,25 @@ curl -sL "$UBLOCK_ORIGIN_PAGE" -o '/tmp/ublock_origin.xpi'
 firefox '/tmp/ublock_origin.xpi'
 read -r -p '[@] Enter any key when extension will be installed'
 rm '/tmp/ublock_origin.xpi'
+
+# Install Android SDK Manager
+ANDROID_SDK_HOME="$HOME/.local/share/android-sdk"
+CMD_TOOLS_HOME="$ANDROID_SDK_HOME/cmdline-tools/latest"
+CMD_TOOLS_BIN="$CMD_TOOLS_HOME/bin"
+LOCAL_BIN="$HOME/.local/bin"
+
+# Create Android SDK home
+mkdir -p "$ANDROID_SDK_HOME"
+
+# Download last Android SDK Command line tools
+LAST_CMD_TOOLS_FILENAME="$(curl -sL 'https://developer.android.com/studio' | grep -Eo 'commandlinetools-linux-.*_latest\.zip' | head -1)"
+curl -Ls "https://dl.google.com/android/repository/$LAST_CMD_TOOLS_FILENAME" -o '/tmp/commandlinetools-linux.zip'
+
+# Unpack Command line tools
+mkdir -p "$CMD_TOOLS_HOME"
+unzip -q '/tmp/commandlinetools-linux.zip' -d '/tmp'
+mv '/tmp/cmdline-tools/'* "$CMD_TOOLS_HOME"
+rm -rf '/tmp/cmdline-tools/' '/tmp/commandlinetools-linux.zip'
+
+# Add symbolic links to ~/.local/bin
+find "$CMD_TOOLS_BIN" -print0 | xargs -0 -I '{}' ln -s '{}' "$LOCAL_BIN"
