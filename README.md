@@ -152,3 +152,39 @@ Change the file `/usr/share/icons/default/index.theme` for applying new cursor t
 > [Icon Theme]
 > Inherits=Adwaita
 > ```
+
+## Install Android Virtual Device
+
+Use `sdkmanager` and `avdmanager` to create new AVD:
+
+```shell
+yes | sdkmanager --licenses && \
+sdkmanager --install 'system-images;android-<sdk-version>;google_apis;x86_64' 'emulator' 'platforms;android-<sdk-version>' 'platform-tools' && \
+avdmanager create avd --name <avd-name> --package "system-images;android-<sdk-version>;google_apis;x86_64"
+```
+
+Specify in `$HOME/.android/advancedFeatures.ini`:
+
+```text
+Vulkan = off
+GLDirectMem = on
+```
+
+See [this page](https://stackoverflow.com/a/68344341) for details.
+
+Specify in `$HOME/.android/avd/<avd-name>/config.ini`:
+
+```text
+hw.keyboard = yes
+```
+
+Use `emulator` to launch it:
+
+```shell
+emulator -avd <avd-name> -cores 4 -memory 4096
+```
+
+Use [rootAVD](https://gitlab.com/newbit/rootAVD) for getting the root access.
+
+> [!NOTE]
+> For example `<sdk-version>` will be `33`, `<avd-name>` will be `android-33`.
