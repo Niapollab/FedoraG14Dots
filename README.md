@@ -140,3 +140,15 @@ semodule -i howdy.pp
 
 > [!NOTE]
 > Add `-u="$(id -u):$(id -g)"` if you use current user instead of root.
+
+## Set cursor theme for every user
+
+Change the file `/usr/share/icons/default/index.theme` for applying new cursor theme.
+
+> [!NOTE]
+> For example
+>
+> ```text
+> [Icon Theme]
+> Inherits=Adwaita
+> ```
