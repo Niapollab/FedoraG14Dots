@@ -1,3 +1,21 @@
+#!/bin/bash
+
+__sshcmd() {
+    # Returns the ssh command to use for the tunnel.
+    #
+    # Parameters:
+    #   None
+    #
+    # Returns:
+    #   str: The ssh command to use for the tunnel.
+
+    if command -v autossh >/dev/null 2>&1; then
+        echo "autossh -M 0"
+    else
+        echo "ssh"
+    fi
+}
+
 serveo() {
     # Establishes a reverse proxy tunnel to serveo.net.
     #
@@ -12,17 +30,34 @@ serveo() {
     local local_port
     local username
     local remote_port
-    local ssh_command
 
     local_port="${1-8000}"
     username="${2-$(whoami)}"
     remote_port="${3-80}"
 
-    if command -v autossh >/dev/null 2>&1; then
-        ssh_command="autossh -M 0"
-    else
-        ssh_command="ssh"
-    fi
+    eval "$(__sshcmd)" -R "$username":"$remote_port":localhost:"$local_port" serveo.net
+}
 
-    eval "$ssh_command" -R "$username":"$remote_port":localhost:"$local_port" serveo.net
+localhost-run() {
+    # Establishes a reverse proxy tunnel to localhost.run.
+    #
+    # Parameters:
+    #   local_port (int): The local port to use for the tunnel. Defaults to 8000.
+    #   remote_port (int): The remote port to use for the tunnel. Defaults to 80.
+    #
+    # Returns:
+    #   str: The local port and remote port used for the tunnel, separated by spaces.
+
+    local local_port
+    local remote_port
+    local args
+
+    local_port="${1-8000}"
+    remote_port="${2-80}"
+
+    # Skip local_port and remote_port if provided
+    args="$(printf '%s ' "${@:3}")"
+    [ $# -gt 2 ] && args="-- ${args}"
+
+    eval "$(__sshcmd)" -R "$remote_port":localhost:"$local_port" localhost.run "$args"
 }
