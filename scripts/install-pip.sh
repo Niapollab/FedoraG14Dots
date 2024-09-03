@@ -9,6 +9,7 @@ APPS=(
     "pywalfox"
     # Reverse
     "frida-tools"
+    "qiling"
     # Python debugger
     "debugpy"
 )
