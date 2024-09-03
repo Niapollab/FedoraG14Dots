@@ -69,6 +69,15 @@ firefox '/tmp/ublock_origin.xpi'
 read -r -p '[@] Enter any key when extension will be installed'
 rm '/tmp/ublock_origin.xpi'
 
+# Install MetaMask to Firefox
+METAMASK_PAGE="$(curl -sL 'https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/' | sed -n 's#.*\"https://addons.mozilla.org/firefox/downloads/file/\(.*\)\"#https://addons.mozilla.org/firefox/downloads/file/\1#p')"
+METAMASK_PAGE="${METAMASK_PAGE%%\"*}"
+
+curl -sL "$METAMASK_PAGE" -o '/tmp/meta_mask.xpi'
+firefox '/tmp/meta_mask.xpi'
+read -r -p '[@] Enter any key when extension will be installed'
+rm '/tmp/meta_mask.xpi'
+
 # Install Android SDK Manager
 ANDROID_SDK_HOME="$HOME/.local/share/android-sdk"
 CMD_TOOLS_HOME="$ANDROID_SDK_HOME/cmdline-tools/latest"
