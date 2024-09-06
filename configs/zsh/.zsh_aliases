@@ -1,7 +1,11 @@
-alias dgpu="__GLX_VENDOR_LIBRARY_NAME=nvidia __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only"
-alias cls="clear"
-alias cat="bat --paging=never"
-alias ls="exa"
-alias ll="exa -l"
-alias ssocks="sslocal -c $HOME/.config/shadowsocks/config.json"
-alias open="xdg-open"
+#!/bin/bash
+
+alias dgpu='__GLX_VENDOR_LIBRARY_NAME=nvidia __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only'
+alias cls='clear'
+alias cat='bat --paging=never'
+alias ls='exa'
+alias ll='exa -l'
+alias ssocks='sslocal -c "$HOME/.config/shadowsocks/config.json"'
+alias open='xdg-open'
+alias start='open'
+alias phone-screen='scrcpy --shortcut-mod=lctrl,rctrl --turn-screen-off --stay-awake --max-size=854 --video-bit-rate=2M --max-fps=25 &>/dev/null & disown'
