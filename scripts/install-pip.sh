@@ -12,6 +12,8 @@ APPS=(
     "qiling"
     # Python debugger
     "debugpy"
+    # Youtube media downloader
+    "yt-dlp"
 )
 
 for app in "${APPS[@]}"
