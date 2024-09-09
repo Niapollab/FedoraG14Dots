@@ -40,6 +40,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
+# Set $GOPATH if Go installed
+if command -v go 1>/dev/null 2>&1; then
+  export GOPATH="$HOME/.go"
+fi
+
 # fzf key bindings
 source /usr/share/fzf/shell/key-bindings.zsh
 
