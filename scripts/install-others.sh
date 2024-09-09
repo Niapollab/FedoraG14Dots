@@ -49,6 +49,15 @@ tar -C "$SHADOWSOCKS_DIR" -xf "$SHADOWSOCKS_DIR/shadowsocks.tar.xz"
 install --mode=0755 --owner=root --group=root --preserve-timestamps -D --target-directory=/usr/bin "$SHADOWSOCKS_DIR/sslocal"
 rm -rf "$SHADOWSOCKS_DIR"
 
+# Tun2socks
+TUN2SOCKS_URL="$(curl -sL 'https://api.github.com/repos/xjasonlyu/tun2socks/releases' | sed -n 's/.*\"browser_download_url\"\s*:\s*\"\(.*\)\"/\1/p' | grep '.linux-amd64.zip' | head -1)"
+curl -sL "$TUN2SOCKS_URL" -o "/tmp/tun2socks.zip"
+unzip '/tmp/tun2socks.zip' -d '/tmp'
+rm -rf '/tmp/tun2socks.zip'
+sudo mv '/tmp/tun2socks'* '/usr/bin/tun2socks'
+sudo chown root: '/usr/bin/tun2socks'
+sudo chmod 755 '/usr/bin/tun2socks'
+
 # Install Pywalfox to Firefox
 pywalfox install
 
