@@ -48,6 +48,7 @@ APPS=(
     "dotnet-sdk-8.0"
     "python3-pip"
     "rustup"
+    "go"
     "nodejs-npm"
     # Pano requirements
     "libgda-sqlite"
