@@ -14,6 +14,8 @@ APPS=(
     "debugpy"
     # Youtube media downloader
     "yt-dlp"
+    # Python linter and code formatter
+    "ruff"
 )
 
 for app in "${APPS[@]}"

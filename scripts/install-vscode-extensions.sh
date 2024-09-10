@@ -15,6 +15,7 @@ EXTENSIONS=(
     "ms-dotnettools.csharp"
     # Python
     "ms-python.python"
+    "charliermarsh.ruff"
     # Remote managment
     "ms-vscode-remote.vscode-remote-extensionpack"
     # Hex editor
