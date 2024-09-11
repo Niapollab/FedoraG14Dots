@@ -16,6 +16,57 @@ __sshcmd() {
     fi
 }
 
+__ssocks() {
+    # Establishes a VPN connection using shadowsocks to the specified server.
+    #
+    # Parameters:
+    #   config_file (str): The path to the shadowsocks configuration file.
+    #   server_ip (str): The IP address of the server to connect to.
+    #   gateway (str): The IP address of the gateway to use for the VPN connection.
+    #   interface (str): The name of the network interface to use for the VPN connection.
+    #   tun_device (str): The name of the TUN device to use for the VPN connection.
+    #   tun_ip (str): The IP address to use for the TUN device.
+    #   tun_mask (str): The subnet mask to use for the TUN device.
+    #
+    # Returns:
+    #   None
+
+    local config_file
+    local server_ip
+    local gateway
+    local interface
+    local tun_device
+    local tun_ip
+    local tun_mask
+
+    config_file="$1"
+    server_ip="$2"
+    gateway="$3"
+    interface="$4"
+    tun_device="$5"
+    tun_ip="$6"
+    tun_mask="$7"
+
+    # Create TUN device
+    ip tuntap add mode tun name "$tun_device"
+    ip addr add "$tun_ip/$tun_mask" dev "$tun_device"
+    ip link set "$tun_device" up
+
+    # Add routes
+    ip route add "$server_ip" via "$gateway" dev "$interface"
+    ip route add default via "$tun_ip" dev "$tun_device"
+
+    # Start shadowsocks
+    sslocal --protocol tun -c "$config_file" --tun-interface-name "$tun_device"
+
+    # Remove routes
+    ip route del default via "$tun_ip" dev "$tun_device"
+    ip route del "$server_ip" via "$gateway" dev "$interface"
+
+    # Remove TUN device
+    ip tuntap del mode tun name "$tun_device"
+}
+
 serveo() {
     # Establishes a reverse proxy tunnel to serveo.net.
     #
@@ -60,4 +111,32 @@ localhost-run() {
     [ $# -gt 2 ] && args="-- ${args}"
 
     eval "$(__sshcmd)" -R "$remote_port":localhost:"$local_port" localhost.run "$args"
+}
+
+ssocks() {
+    # Establishes a VPN connection using shadowsocks to the specified server.
+    #
+    # Parameters:
+    #   None
+    #
+    # Returns:
+    #   None
+
+    local CONFIG_FILE
+    local SERVER_IP
+    local TUN_DEVICE
+    local TUN_IP
+    local TUN_MASK
+    local GATEWAY
+    local INTERFACE
+
+    CONFIG_FILE="$HOME/.config/shadowsocks/config.json"
+    SERVER_IP="$(jq -r .server "$CONFIG_FILE" | xargs dig +short)"
+    TUN_DEVICE="t2s"
+    TUN_IP="192.168.69.1"
+    TUN_MASK="24"
+    GATEWAY=$(ip route | grep 600 | grep default | awk '{print $3}')
+    INTERFACE=$(ip route | grep 600 | grep default | awk '{print $5}')
+
+    sudo sh -c "$(declare -f __ssocks); __ssocks \"$CONFIG_FILE\" \"$SERVER_IP\" \"$GATEWAY\" \"$INTERFACE\" \"$TUN_DEVICE\" \"$TUN_IP\" \"$TUN_MASK\""
 }
