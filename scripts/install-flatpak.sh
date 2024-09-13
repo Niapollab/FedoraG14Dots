@@ -6,6 +6,7 @@ APPS=(
     "org.videolan.VLC"
     # Photo editor
     "org.gimp.GIMP"
+    "com.github.flxzt.rnote"
     # Vector graphics editor
     "org.inkscape.Inkscape"
     # Video editor
