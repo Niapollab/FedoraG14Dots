@@ -140,3 +140,19 @@ ssocks() {
 
     sudo sh -c "$(declare -f __ssocks); __ssocks \"$CONFIG_FILE\" \"$SERVER_IP\" \"$GATEWAY\" \"$INTERFACE\" \"$TUN_DEVICE\" \"$TUN_IP\" \"$TUN_MASK\""
 }
+
+activate() {
+    # Activates a Python virtual environment.
+    #
+    # Parameters:
+    #   venv_dir (str): The path to the virtual environment directory. Defaults to ".env".
+    #
+    # Returns:
+    #   None
+
+    local venv_dir
+    venv_dir="${1-.venv}"
+
+    # shellcheck disable=SC1091
+    . "$venv_dir/bin/activate"
+}
