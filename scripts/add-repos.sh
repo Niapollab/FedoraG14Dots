@@ -12,8 +12,12 @@ sudo dnf install -y \
     "rpmfusion-nonfree-release-rawhide"
 
 # VSCode
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo rpm --import 'https://packages.microsoft.com/keys/microsoft.asc'
 sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/CORP_yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.CORP_repos.d/vscode.repo'
+
+# Warp
+sudo rpm --import 'https://releases.warp.dev/linux/keys/warp.asc'
+sudo sh -c 'echo -e "[warpdotdev]\nname=warpdotdev\nbaseurl=https://releases.warp.dev/linux/rpm/stable\nenabled=1\ngpgcheck=1\ngpgkey=https://releases.warp.dev/linux/keys/warp.asc" > /etc/yum.repos.d/warpdotdev.repo'
 
 # VirtIO
 sudo curl -sL https://fedorapeople.org/groups/virt/virtio-win/virtio-win.repo -o /etc/yum.repos.d/virtio-win.repo

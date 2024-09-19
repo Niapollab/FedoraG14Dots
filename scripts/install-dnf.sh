@@ -78,6 +78,8 @@ APPS=(
     "howdy"
     # SSH autoconnect
     "autossh"
+    # Warp terminal
+    "warp-terminal"
 )
 
 # Enable buildx plugin for Docker
