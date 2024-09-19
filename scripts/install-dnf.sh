@@ -65,6 +65,8 @@ APPS=(
     "bat"
     # Extended ls util
     "eza"
+    # Extended cd util
+    "zoxide"
     # Battery profiler
     "powertop"
     # Android screen mirroring

@@ -45,8 +45,15 @@ if command -v go 1>/dev/null 2>&1; then
   export GOPATH="$HOME/.go"
 fi
 
-# fzf key bindings
-source /usr/share/fzf/shell/key-bindings.zsh
+# Set fzf key bindings if installed
+if command -v pyenv 1>/dev/null 2>&1; then
+  source /usr/share/fzf/shell/key-bindings.zsh
+fi
+
+# Load zoxide if installed
+if command -v zoxide 1>/dev/null 2>&1; then
+  eval "$(zoxide init zsh --cmd cd)"
+fi
 
 # Aliases
 source ~/.zsh_aliases
