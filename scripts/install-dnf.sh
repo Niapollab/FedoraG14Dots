@@ -11,6 +11,8 @@ APPS=(
     "asusctl"
     "supergfxctl"
     "asusctl-rog-gui"
+    # Alacritty terminal
+    "alacritty"
     # Text editors
     "micro"
     "code"
