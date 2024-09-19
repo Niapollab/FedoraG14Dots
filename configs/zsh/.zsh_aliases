@@ -1,11 +1,36 @@
 #!/bin/bash
 
+# Run app with Nvidia GPU
 alias dgpu='__GLX_VENDOR_LIBRARY_NAME=nvidia __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only'
+
+# Set shorter version of clear
 alias cls='clear'
+alias c='clear'
+
+# Replace cat by bat
 alias cat='bat --paging=never'
+alias catp='bat'
+
+# Native cat command
+alias ntcat='/usr/bin/cat'
+
+# Replace ls by exa
 alias ls='exa'
-alias ll='exa -l'
+alias ll='ls -l'
+alias lla='ls -la'
+
+# Native ls command
+alias ntls='/usr/bin/ls'
+alias ntll='ntls -l'
+alias ntlla='ntls -la'
+
+# Set shorter version of xdg-open
 alias open='xdg-open'
 alias start='open'
+
+# Run scrcpy
 alias phone-screen='scrcpy --shortcut-mod=lctrl,rctrl --turn-screen-off --stay-awake --max-size=854 --video-bit-rate=2M --max-fps=25 &>/dev/null & disown'
-alias ipg='curl -s ipinfo.io | jq -r .ip'
+
+# Get global IP address information
+alias ipg-info='curl -s ipinfo.io | jq .'
+alias ipg='ipg-info | jq -r .ip'
