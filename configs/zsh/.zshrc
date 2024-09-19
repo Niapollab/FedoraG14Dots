@@ -32,9 +32,6 @@ else
   export EDITOR='code'
 fi
 
-# Set pywal theme for Gnome Terminal
-[ ! -z ${GNOME_TERMINAL_SERVICE} ] && (cat ~/.cache/wal/sequences &)
-
 # Load pyenv if installed
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
