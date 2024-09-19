@@ -1,3 +1,7 @@
+import = [
+    "~/.config/alacritty/theme.toml",
+]
+
 live_config_reload = false
 
 [window]
