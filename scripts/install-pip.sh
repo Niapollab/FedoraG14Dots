@@ -16,7 +16,12 @@ APPS=(
     "yt-dlp"
     # Python linter and code formatter
     "ruff"
+    # Nautilus extension
+    "nautilus-open-any-terminal"
 )
+
+# Recompile dconf schemas
+glib-compile-schemas "$HOME/.local/share/glib-2.0/schemas/"
 
 for app in "${APPS[@]}"
 do

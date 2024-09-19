@@ -13,6 +13,8 @@ APPS=(
     "asusctl-rog-gui"
     # Alacritty terminal
     "alacritty"
+    # Nautilus python extensions
+    "nautilus-python"
     # Text editors
     "micro"
     "code"
@@ -89,6 +91,9 @@ docker buildx install
 
 # Create symlink from fastfetch to neofetch
 ln -s /usr/bin/fastfetch /usr/bin/neofetch
+
+# Create symlink from alacritty to gnome-terminal
+ln -s /usr/bin/alacritty /usr/bin/gnome-terminal
 
 # Initialize Rust
 rustup-init -y

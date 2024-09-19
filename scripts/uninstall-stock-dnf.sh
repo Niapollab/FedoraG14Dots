@@ -10,6 +10,7 @@ APPS=(
     "gnome-boxes"
     "PackageKit-command-not-found"
     "gnome-connections"
+    "gnome-terminal"
 )
 
 for app in "${APPS[@]}"
