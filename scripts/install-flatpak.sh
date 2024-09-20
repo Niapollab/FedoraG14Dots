@@ -11,6 +11,8 @@ APPS=(
     "org.inkscape.Inkscape"
     # Video editor
     "org.shotcut.Shotcut"
+    # Mail client
+    "org.mozilla.Thunderbird"
     # Social networks
     "org.telegram.desktop"
     "io.github.spacingbat3.webcord"
