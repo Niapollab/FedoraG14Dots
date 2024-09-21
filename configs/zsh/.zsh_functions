@@ -156,3 +156,52 @@ activate() {
     # shellcheck disable=SC1091
     . "$venv_dir/bin/activate"
 }
+
+anime() {
+    # Controls the anime on the Asus ROG Zephyrus G14 GA402XV.
+    #
+    # Parameters:
+    #   anime_switch (str): The switch to turn the anime on or off. Defaults to "off".
+    #       on: Enables the anime.
+    #       off: Disables the anime.
+    #   anime_mode (str): The mode of the anime.
+    #       i|image: Displays a static image.
+    #       pi|pixel-image: Displays a pixel art image.
+    #       gif: Displays a GIF.
+    #       pg|pixel-gif: Displays a pixel art GIF.
+    #   path (str): The path to the static image, pixel art image, GIF, or pixel art GIF.
+    #   args (list): Additional arguments to pass to the asusctl anime command.
+    #
+    # Returns:
+    #   None
+
+    local anime_switch
+    local anime_mode
+
+    anime_switch="$1"
+    anime_mode="$2"
+
+    for pid in $(ps -ef | awk '/asusctl.*anime/ {print $2}'); do kill -s SIGINT "$pid"; done 1>/dev/null 2>&1
+    asusctl anime --enable-display false 1>/dev/null 2>&1
+
+    if [ "$anime_switch" = "on" ]; then
+        case "$anime_mode" in
+                i|image)
+                    asusctl anime --enable-display true
+                    asusctl anime image --path "$3" "${@:4}" & disown
+                    ;;
+                pi|pixel-image)
+                    asusctl anime --enable-display true
+                    asusctl anime pixel-image --path "$3" "${@:4}" & disown
+                    ;;
+                gif)
+                    asusctl anime --enable-display true
+                    asusctl anime gif --loops 0 --path "$3" "${@:4}" & disown
+                    ;;
+                pg|pixel-gif)
+                    asusctl anime --enable-display true
+                    asusctl anime pixel-gif --loops 0 --path "$3" "${@:4}" & disown
+                    ;;
+            esac
+    fi
+}

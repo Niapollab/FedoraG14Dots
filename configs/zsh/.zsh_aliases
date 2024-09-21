@@ -34,3 +34,9 @@ alias phone-screen='scrcpy --shortcut-mod=lctrl,rctrl --turn-screen-off --stay-a
 # Get global IP address information
 alias ipg-info='curl -s ipinfo.io | jq .'
 alias ipg='ipg-info | jq -r .ip'
+
+# Anime matrix
+alias animei="anime on image"
+alias animepi="anime on pixel-image"
+alias animeg="anime on gif"
+alias animepg="anime on pixel-gif"
