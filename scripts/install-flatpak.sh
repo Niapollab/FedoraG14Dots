@@ -54,6 +54,8 @@ APPS=(
     "org.remmina.Remmina"
     # Games
     "org.gnome.Mines"
+    # EBook reader
+    "com.github.johnfactotum.Foliate"
 )
 
 for app in "${APPS[@]}"
