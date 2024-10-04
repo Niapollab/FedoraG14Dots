@@ -58,6 +58,7 @@ APPS=(
     "libgda-sqlite"
     # Media downloader
     "python3-streamlink"
+    "aria2"
     # Fuzzy search
     "fzf"
     # OpenH264 (for live-streams viewing)
