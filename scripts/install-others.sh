@@ -37,8 +37,19 @@ bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 rm -f "$HOME/.gdbinit"
 mv -f "$(find ~ -name '.gef*' | head -1)" "$HOME/.gef.py"
 
+# PINCE (Cheat Engine alternative)
+PINCE_URL="$(curl -sL 'https://api.github.com/repos/korcankaraokcu/PINCE/releases' | sed -n 's/.*\"browser_download_url\"\s*:\s*\"\(.*\)\"/\1/p' | grep '.AppImage' | head -1)"
+curl -sL "$PINCE_URL" -o '/tmp/Pince.AppImage'
+mkdir -p "$HOME/.local/pince.app" "$HOME/.local/bin"
+mv '/tmp/Pince.AppImage' "$HOME/.local/pince.app/Pince.AppImage"
+tee "$HOME/.local/bin/pince" > /dev/null << EOF
+#!/bin/sh
+sudo -E -b "/home/$(whoami)/.local/pince.app/Pince.AppImage" 1>/dev/null 2>&1
+EOF
+chmod +x "$HOME/.local/pince.app/Pince.AppImage" "$HOME/.local/bin/pince"
+
 # pwndbg
-PWNDBG_URL=$(curl -sL 'https://api.github.com/repos/pwndbg/pwndbg/releases' | sed -n 's/.*\"browser_download_url\"\s*:\s*\"\(.*\)\"/\1/p' | grep '.x86_64.rpm' | head -1)
+PWNDBG_URL="$(curl -sL 'https://api.github.com/repos/pwndbg/pwndbg/releases' | sed -n 's/.*\"browser_download_url\"\s*:\s*\"\(.*\)\"/\1/p' | grep '.x86_64.rpm' | head -1)"
 curl -sL "$PWNDBG_URL" -o '/tmp/pwndbg.rpm'
 sudo dnf install -y '/tmp/pwndbg.rpm'
 rm -f '/tmp/pwndbg.rpm'
