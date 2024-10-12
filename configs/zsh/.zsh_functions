@@ -205,3 +205,26 @@ anime() {
             esac
     fi
 }
+
+zode() {
+    # Open a file or directory in VS Code using zoxide.
+    #
+    # Args:
+    #   regex (str): A regex pattern to search for in the zoxide database. If the regex does not match any entry, the regex will be interpreted as a path and passed directly to the VS Code CLI.
+    #
+    # Returns:
+    #   None
+
+    local regex
+    local filepath
+
+    regex="$1"
+
+    if command -v zoxide >/dev/null 2>&1; then
+        filepath="$(zoxide query "$regex")"
+
+        [[ -n "$filepath" ]] && code "$filepath"
+    else
+        code "$regex"
+    fi
+}
