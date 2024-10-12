@@ -22,6 +22,8 @@ APPS=(
     "zsh"
     # System fetch
     "fastfetch"
+    # System monitoring
+    "btop"
     # Cursor theme
     "bibata-cursor-themes"
     # GTK apps theme
