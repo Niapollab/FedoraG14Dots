@@ -25,6 +25,16 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# Headline theme configurations
+if [[ "$ZSH_THEME" == 'headline' ]]; then
+  HL_SEP_MODE='on'
+  HL_ERR_MODE='detail'
+
+  if [[ "$TERM_PROGRAM" == 'WarpTerminal' && "$HL_PRINT_MODE" == 'precmd' ]]; then
+    HL_PRINT_MODE='prompt'
+  fi
+fi
+
 # Set preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='micro'
