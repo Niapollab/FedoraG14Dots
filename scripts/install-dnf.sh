@@ -56,6 +56,8 @@ APPS=(
     "rustup"
     "go"
     "nodejs-npm"
+    # Cheatsheet
+    "tldr"
     # Pano requirements
     "libgda-sqlite"
     # Media downloader
