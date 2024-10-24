@@ -14,8 +14,8 @@ alias catp='bat'
 # Native cat command
 alias ntcat='/usr/bin/cat'
 
-# Replace ls by exa
-alias ls='exa'
+# Replace ls by eza
+alias ls='eza'
 alias ll='ls -l'
 alias lla='ls -la'
 
