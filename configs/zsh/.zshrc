@@ -53,8 +53,8 @@ if command -v go 1>/dev/null 2>&1; then
 fi
 
 # Set fzf key bindings if installed
-if command -v pyenv 1>/dev/null 2>&1; then
-  source /usr/share/fzf/shell/key-bindings.zsh
+if [ -f '/usr/share/fzf/shell/key-bindings.zsh' ]; then
+  source '/usr/share/fzf/shell/key-bindings.zsh'
 fi
 
 # Load zoxide if installed
@@ -63,7 +63,7 @@ if command -v zoxide 1>/dev/null 2>&1; then
 fi
 
 # Aliases
-source ~/.zsh_aliases
+source "$HOME/.zsh_aliases"
 
 # Functions
-source ~/.zsh_functions
+source "$HOME/.zsh_functions"
