@@ -12,7 +12,7 @@ alias cat='bat --paging=never'
 alias catp='bat'
 
 # Native cat command
-alias ntcat='/usr/bin/cat'
+alias ntcat='/bin/cat'
 
 # Replace ls by eza
 alias ls='eza'
@@ -20,7 +20,7 @@ alias ll='ls -l'
 alias lla='ls -la'
 
 # Native ls command
-alias ntls='/usr/bin/ls'
+alias ntls='/bin/ls'
 alias ntll='ntls -l'
 alias ntlla='ntls -la'
 
