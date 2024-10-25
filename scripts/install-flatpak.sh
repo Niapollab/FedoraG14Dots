@@ -17,7 +17,6 @@ APPS=(
     "org.telegram.desktop"
     "io.github.spacingbat3.webcord"
     "com.skype.Client"
-    "com.github.IsmaelMartinez.teams_for_linux"
     # Streaming
     "com.obsproject.Studio"
     # Zip utils
