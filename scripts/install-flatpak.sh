@@ -49,8 +49,9 @@ APPS=(
     "me.kozec.syncthingtk"
     # Tor browser
     "org.torproject.torbrowser-launcher"
-    # RDP client
+    # Remote management
     "org.remmina.Remmina"
+    "com.rustdesk.RustDesk"
     # Games
     "org.gnome.Mines"
     # EBook reader
