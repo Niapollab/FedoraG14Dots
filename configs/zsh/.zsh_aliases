@@ -40,3 +40,6 @@ alias animei="anime on image"
 alias animepi="anime on pixel-image"
 alias animeg="anime on gif"
 alias animepg="anime on pixel-gif"
+
+# Run ShadowSocks client
+alias ssocks='sslocal -c "$HOME/.config/shadowsocks/config.json"'

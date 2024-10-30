@@ -113,7 +113,7 @@ localhost-run() {
     eval "$(__sshcmd)" -R "$remote_port":localhost:"$local_port" localhost.run "$args"
 }
 
-ssocks() {
+ssocks-tun() {
     # Establishes a VPN connection using shadowsocks to the specified server.
     #
     # Parameters:
