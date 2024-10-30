@@ -4,8 +4,9 @@ set -e
 EXTENSIONS=(
     # Colorful comments
     "aaron-bond.better-comments"
-    # Markdown linter
+    # Markdown utils
     "DavidAnson.vscode-markdownlint"
+    "yzhang.markdown-all-in-one"
     # Gitlens
     "eamodio.gitlens"
     # Docker
