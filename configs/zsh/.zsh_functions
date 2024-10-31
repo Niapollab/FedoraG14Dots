@@ -228,3 +228,19 @@ zode() {
         code "$regex"
     fi
 }
+
+keep-escapes() {
+    # Runs a command and saves the output to a file, preserving the ANSI escape codes.
+    #
+    # Args:
+    #   command (str): The command to run.
+    #
+    # Returns:
+    #   None
+
+    local command
+
+    command="$1"
+
+    script --flush --quiet --command "$command" '/dev/null'
+}

@@ -43,3 +43,6 @@ alias animepg="anime on pixel-gif"
 
 # Run ShadowSocks client
 alias ssocks='sslocal -c "$HOME/.config/shadowsocks/config.json"'
+
+# Remove escapes from stream
+alias no-escapes="sed 's/\x1b\[[0-9;]*[mGKHF]//g'"
