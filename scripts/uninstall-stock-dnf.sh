@@ -11,6 +11,7 @@ APPS=(
     "PackageKit-command-not-found"
     "gnome-connections"
     "gnome-terminal"
+    "ptyxis"
 )
 
 for app in "${APPS[@]}"
