@@ -36,7 +36,7 @@ APPS=(
     "android-tools"
     # Virtualization
     "docker"
-    "docker-buildx-plugin"
+    "docker-buildx"
     "docker-compose-plugin"
     "virt-manager"
     "libvirt"
