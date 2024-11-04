@@ -15,7 +15,7 @@ APPS=(
     "org.mozilla.Thunderbird"
     # Social networks
     "org.telegram.desktop"
-    "io.github.spacingbat3.webcord"
+    "dev.vencord.Vesktop"
     "com.skype.Client"
     # Streaming
     "com.obsproject.Studio"
