@@ -11,8 +11,9 @@ APPS=(
     "asusctl"
     "supergfxctl"
     "asusctl-rog-gui"
-    # Alacritty terminal
+    # Terminals
     "alacritty"
+    "wezterm"
     # Nautilus python extensions
     "nautilus-python"
     # Text editors
@@ -87,8 +88,6 @@ APPS=(
     "howdy"
     # SSH autoconnect
     "autossh"
-    # Warp terminal
-    "warp-terminal"
 )
 
 # Enable buildx plugin for Docker
