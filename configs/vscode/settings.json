@@ -10,11 +10,18 @@
     "editor.fontFamily": "Fira Code Retina",
     "editor.fontLigatures": true,
 
+    // Terminal
+    "terminal.integrated.fontFamily": "Monospace",
+    "terminal.integrated.fontSize": 14,
+
     // Whitespaces
     "files.trimTrailingWhitespace": true,
 
     // Debug
     "debug.allowBreakpointsEverywhere": true,
+
+    // Diff mode
+    "diffEditor.ignoreTrimWhitespace": true,
 
     // C++
     "C_Cpp.inlayHints.referenceOperator.enabled": true,
@@ -29,6 +36,9 @@
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.inlayHints.callArgumentNames": "partial",
+
+    // Python (Jupyter)
+    "jupyter.askForKernelRestart": false,
 
     // Markdown
     "markdownlint.config": {
