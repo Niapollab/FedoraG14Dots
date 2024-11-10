@@ -40,6 +40,8 @@ EXTENSIONS=(
     # ChatGPT Integration
     "genieai.chatgpt-vscode"
     "Codeium.codeium"
+    # Lua
+    "sumneko.lua"
 )
 
 for extension in "${EXTENSIONS[@]}"
