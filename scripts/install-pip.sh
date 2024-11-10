@@ -4,9 +4,6 @@ set -e
 APPS=(
     # Gnome extensions manager
     "gnome-extensions-cli"
-    # Pywal
-    "pywal"
-    "pywalfox"
     # Reverse
     "frida-tools"
     "qiling"

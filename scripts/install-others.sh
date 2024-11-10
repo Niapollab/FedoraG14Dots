@@ -72,16 +72,14 @@ sudo mv '/tmp/tun2socks'* '/usr/bin/tun2socks'
 sudo chown root: '/usr/bin/tun2socks'
 sudo chmod 755 '/usr/bin/tun2socks'
 
-# Install Pywalfox to Firefox
-pywalfox install
+# Install Dracula to Firefox
+DRACULA_PAGE="$(curl -sL 'https://addons.mozilla.org/en-US/firefox/addon/dracula-dark-colorscheme/' | sed -n 's#.*\"https://addons.mozilla.org/firefox/downloads/file/\(.*\)\"#https://addons.mozilla.org/firefox/downloads/file/\1#p')"
+DRACULA_PAGE="${DRACULA_PAGE%%\"*}"
 
-PYWALFOX_PAGE="$(curl -sL 'https://addons.mozilla.org/en-US/firefox/addon/pywalfox/' | sed -n 's#.*\"https://addons.mozilla.org/firefox/downloads/file/\(.*\)\"#https://addons.mozilla.org/firefox/downloads/file/\1#p')"
-PYWALFOX_PAGE="${PYWALFOX_PAGE%%\"*}"
-
-curl -sL "$PYWALFOX_PAGE" -o '/tmp/pywalfox.xpi'
-firefox '/tmp/pywalfox.xpi'
+curl -sL "$DRACULA_PAGE" -o '/tmp/dracula.xpi'
+firefox '/tmp/dracula.xpi'
 read -r -p '[@] Enter any key when extension will be installed'
-rm '/tmp/pywalfox.xpi'
+rm '/tmp/dracula.xpi'
 
 # Install ublock-origin to Firefox
 UBLOCK_ORIGIN_PAGE="$(curl -sL 'https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/' | sed -n 's#.*\"https://addons.mozilla.org/firefox/downloads/file/\(.*\)\"#https://addons.mozilla.org/firefox/downloads/file/\1#p')"

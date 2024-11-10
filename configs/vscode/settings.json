@@ -1,6 +1,6 @@
 {
     // Theme
-    "workbench.colorTheme": "Wal",
+    "workbench.colorTheme": "Dracula Theme",
 
     // MenuBar
     "window.menuBarVisibility": "toggle",

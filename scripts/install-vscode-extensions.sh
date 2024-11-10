@@ -2,6 +2,8 @@
 set -e
 
 EXTENSIONS=(
+    # Dracula theme
+    "dracula-theme.theme-dracula"
     # Colorful comments
     "aaron-bond.better-comments"
     # Markdown utils
