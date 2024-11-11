@@ -103,6 +103,9 @@ install_firefox_extension 'ublock-origin'
 # Install MetaMask to Firefox
 install_firefox_extension 'ether-metamask'
 
+# Install SmartProxy to Firefox
+install_firefox_extension 'smartproxy'
+
 # Install Android SDK Manager
 ANDROID_SDK_HOME="$HOME/.local/share/android-sdk"
 CMD_TOOLS_HOME="$ANDROID_SDK_HOME/cmdline-tools/latest"
