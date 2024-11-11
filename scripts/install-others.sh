@@ -38,8 +38,17 @@ git clone 'https://github.com/joshskidmore/zsh-fzf-history-search.git' "$ZSH_CUS
 # Headline ZSH Theme
 curl -sL 'https://raw.githubusercontent.com/moarram/headline/main/headline.zsh-theme' -o "$ZSH_CUSTOM/themes/headline.zsh-theme"
 
+# Papirus folders script
+sh -c "$(curl -fsSL 'https://git.io/papirus-folders-install')"
+
+# Dracula Papirus folders
+git clone 'https://github.com/dracula/papirus-folders' '/tmp/papirus-folders'
+sudo chown -R root:root '/tmp/papirus-folders'
+sudo cp -rf '/tmp/papirus-folders/Icons/'* '/usr/share/icons/Papirus'
+sudo rm -rf '/tmp/papirus-folders'
+
 # Zed
-curl https://zed.dev/install.sh | sh
+curl 'https://zed.dev/install.sh' | sh
 
 # Pyenv
 git clone 'https://github.com/pyenv/pyenv.git' "$HOME/.pyenv"

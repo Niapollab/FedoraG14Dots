@@ -27,6 +27,10 @@ APPS=(
     "btop"
     # Cursor theme
     "bibata-cursor-themes"
+    # Icons theme
+    "papirus-icon-theme"
+    "papirus-icon-theme-dark"
+    "papirus-icon-theme-light"
     # GTK apps theme
     "adw-gtk3-theme"
     # Gnome theme editor
