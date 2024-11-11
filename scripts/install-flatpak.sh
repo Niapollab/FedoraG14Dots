@@ -56,6 +56,8 @@ APPS=(
     "org.gnome.Mines"
     # EBook reader
     "com.github.johnfactotum.Foliate"
+    # PS2 Emulator
+    "net.pcsx2.PCSX2"
 )
 
 for app in "${APPS[@]}"
