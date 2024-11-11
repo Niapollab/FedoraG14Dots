@@ -1,6 +1,28 @@
 #!/bin/bash
 set -e
 
+install_firefox_extension() {
+    # Installs Firefox extension.
+    #
+    # Parameters:
+    #   extension_name (str): The name of Firefox extension.
+    #
+    # Returns:
+    #   None
+
+    local extension_name
+
+    extension_name="$1"
+
+    EXTENSION_PAGE="$(curl -sL "https://addons.mozilla.org/en-US/firefox/addon/$extension_name/" | sed -n 's#.*\"https://addons.mozilla.org/firefox/downloads/file/\(.*\)\"#https://addons.mozilla.org/firefox/downloads/file/\1#p')"
+    EXTENSION_PAGE="${EXTENSION_PAGE%%\"*}"
+
+    curl -sL "$EXTENSION_PAGE" -o '/tmp/firefox-extension.xpi'
+    firefox '/tmp/firefox-extension.xpi'
+    read -r -p '[@] Enter any key when extension will be installed'
+    rm '/tmp/firefox-extension.xpi'
+}
+
 # Oh-my-zsh
 sh -c "$(curl -fsSL 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh')"
 
@@ -73,31 +95,13 @@ sudo chown root: '/usr/bin/tun2socks'
 sudo chmod 755 '/usr/bin/tun2socks'
 
 # Install Dracula to Firefox
-DRACULA_PAGE="$(curl -sL 'https://addons.mozilla.org/en-US/firefox/addon/dracula-dark-colorscheme/' | sed -n 's#.*\"https://addons.mozilla.org/firefox/downloads/file/\(.*\)\"#https://addons.mozilla.org/firefox/downloads/file/\1#p')"
-DRACULA_PAGE="${DRACULA_PAGE%%\"*}"
-
-curl -sL "$DRACULA_PAGE" -o '/tmp/dracula.xpi'
-firefox '/tmp/dracula.xpi'
-read -r -p '[@] Enter any key when extension will be installed'
-rm '/tmp/dracula.xpi'
+install_firefox_extension 'dracula-dark-colorscheme'
 
 # Install ublock-origin to Firefox
-UBLOCK_ORIGIN_PAGE="$(curl -sL 'https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/' | sed -n 's#.*\"https://addons.mozilla.org/firefox/downloads/file/\(.*\)\"#https://addons.mozilla.org/firefox/downloads/file/\1#p')"
-UBLOCK_ORIGIN_PAGE="${UBLOCK_ORIGIN_PAGE%%\"*}"
-
-curl -sL "$UBLOCK_ORIGIN_PAGE" -o '/tmp/ublock_origin.xpi'
-firefox '/tmp/ublock_origin.xpi'
-read -r -p '[@] Enter any key when extension will be installed'
-rm '/tmp/ublock_origin.xpi'
+install_firefox_extension 'ublock-origin'
 
 # Install MetaMask to Firefox
-METAMASK_PAGE="$(curl -sL 'https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/' | sed -n 's#.*\"https://addons.mozilla.org/firefox/downloads/file/\(.*\)\"#https://addons.mozilla.org/firefox/downloads/file/\1#p')"
-METAMASK_PAGE="${METAMASK_PAGE%%\"*}"
-
-curl -sL "$METAMASK_PAGE" -o '/tmp/meta_mask.xpi'
-firefox '/tmp/meta_mask.xpi'
-read -r -p '[@] Enter any key when extension will be installed'
-rm '/tmp/meta_mask.xpi'
+install_firefox_extension 'ether-metamask'
 
 # Install Android SDK Manager
 ANDROID_SDK_HOME="$HOME/.local/share/android-sdk"
