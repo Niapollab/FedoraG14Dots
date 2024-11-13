@@ -19,6 +19,8 @@ EXTENSIONS=(
     # Python
     "ms-python.python"
     "charliermarsh.ruff"
+    # Python (Jupyter)
+    "ms-toolsai.jupyter"
     # Remote managment
     "ms-vscode-remote.vscode-remote-extensionpack"
     # Hex editor
