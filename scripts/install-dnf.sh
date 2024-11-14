@@ -19,6 +19,8 @@ APPS=(
     # Text editors
     "micro"
     "code"
+    # Wayland clipboard manager (for micro)
+    "wl-clipboard"
     # Shell
     "zsh"
     # System fetch
