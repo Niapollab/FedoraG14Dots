@@ -24,8 +24,10 @@ alias ntls='/bin/ls'
 alias ntll='ntls -l'
 alias ntlla='ntls -la'
 
-# Set shorter version of xdg-open
-alias open='xdg-open'
+# Set shorter version of xdg-open (if open is not exists)
+if ! command -v open >/dev/null 2>&1 && command -v xdg-open >/dev/null 2>&1; then
+    alias open='xdg-open'
+fi
 alias start='open'
 
 # Run scrcpy
