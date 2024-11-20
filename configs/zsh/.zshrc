@@ -57,6 +57,12 @@ if [ -f '/usr/share/fzf/shell/key-bindings.zsh' ]; then
   source '/usr/share/fzf/shell/key-bindings.zsh'
 fi
 
+# Load nvm if installed
+if [ -d "$HOME/.nvm" ]; then
+  source "$HOME/.nvm/nvm.sh"
+  source "$HOME/.nvm/bash_completion"
+fi
+
 # Load zoxide if installed
 if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh --cmd cd)"

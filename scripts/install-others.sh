@@ -63,6 +63,10 @@ case "\$PATH" in
 esac
 EOF
 
+# NVM (Node Version Manager)
+NVM_VERSION="$(curl -sL https://api.github.com/repos/nvm-sh/nvm/releases | sed -n 's/.*\"tag_name\"\s*:\s*\"\(.*\)\".*/\1/p' | head -1)"
+curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | bash
+
 # GEF
 bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 rm -f "$HOME/.gdbinit"
