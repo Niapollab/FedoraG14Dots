@@ -35,6 +35,12 @@ git clone 'https://github.com/zsh-users/zsh-autosuggestions.git' "$ZSH_CUSTOM/pl
 # zsh-fzf-history-search
 git clone 'https://github.com/joshskidmore/zsh-fzf-history-search.git' "$ZSH_CUSTOM/plugins/zsh-fzf-history-search"
 
+# zsh-pyenv-lazy
+git clone 'https://github.com/davidparsson/zsh-pyenv-lazy.git' "$ZSH_CUSTOM/plugins/pyenv-lazy"
+
+# zsh-nvm-lazy-load
+git clone 'https://github.com/undg/zsh-nvm-lazy-load.git' "$ZSH_CUSTOM/plugins/zsh-nvm-lazy-load"
+
 # Headline ZSH Theme
 curl -sL 'https://raw.githubusercontent.com/moarram/headline/main/headline.zsh-theme' -o "$ZSH_CUSTOM/themes/headline.zsh-theme"
 

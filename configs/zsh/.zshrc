@@ -20,7 +20,7 @@ zstyle ':omz:update' mode reminder
 zstyle ':omz:update' frequency 7
 
 # Plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-fzf-history-search pyenv-lazy zsh-nvm-lazy-load)
 
 # Load oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -42,11 +42,6 @@ else
   export EDITOR='code'
 fi
 
-# Load pyenv if installed
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
 # Set $GOPATH if Go installed
 if command -v go 1>/dev/null 2>&1; then
   export GOPATH="$HOME/.go"
@@ -55,12 +50,6 @@ fi
 # Set fzf key bindings if installed
 if [ -f '/usr/share/fzf/shell/key-bindings.zsh' ]; then
   source '/usr/share/fzf/shell/key-bindings.zsh'
-fi
-
-# Load nvm if installed
-if [ -d "$HOME/.nvm" ]; then
-  source "$HOME/.nvm/nvm.sh"
-  source "$HOME/.nvm/bash_completion"
 fi
 
 # Load zoxide if installed
