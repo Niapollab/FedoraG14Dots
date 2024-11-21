@@ -21,6 +21,8 @@ APPS=(
     "code"
     # Wayland clipboard manager (for micro)
     "wl-clipboard"
+    # Brightness CLI tool
+    "brightnessctl"
     # Shell
     "zsh"
     # System fetch
