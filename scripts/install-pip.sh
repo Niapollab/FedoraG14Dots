@@ -7,6 +7,8 @@ APPS=(
     # Reverse
     "frida-tools"
     "qiling"
+    # HTTP intercepting proxy
+    "mitmproxy"
     # Python debugger
     "debugpy"
     # Youtube media downloader
