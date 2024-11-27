@@ -188,3 +188,11 @@ Use [rootAVD](https://gitlab.com/newbit/rootAVD) for getting the root access.
 
 > [!NOTE]
 > For example `<sdk-version>` will be `33`, `<avd-name>` will be `android-33`.
+
+## Keep screen awake
+
+Use `systemd-inhibit` with `<command>` to keep screen awake for a duration of time:
+
+```shell
+systemd-inhibit <command>
+```
