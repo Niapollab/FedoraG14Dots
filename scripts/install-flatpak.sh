@@ -58,6 +58,8 @@ APPS=(
     "com.github.johnfactotum.Foliate"
     # PS2 Emulator
     "net.pcsx2.PCSX2"
+    # VK Music player
+    "io.github.purplehorrorrus.Meridius"
 )
 
 for app in "${APPS[@]}"
