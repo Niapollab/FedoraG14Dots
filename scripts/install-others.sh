@@ -85,6 +85,22 @@ case "\$PATH" in
 esac
 EOF
 
+# Install tlrc (tldr client)
+TLRC_URL="$(github_browser_download_urls 'tldr-pages/tlrc' | grep 'unknown-linux-gnu.tar.gz' | head -1)"
+TLRC_DIR='/tmp/tlrc'
+mkdir -p "$TLRC_DIR"
+curl -sL "$TLRC_URL" -o "$TLRC_DIR/tlrc.tar.gz"
+tar -C "$TLRC_DIR" -xf "$TLRC_DIR/tlrc.tar.gz"
+sudo chmod -R 644 "$TLRC_DIR"
+sudo chmod 755 "$TLRC_DIR/tldr" "$TLRC_DIR/completions"
+sudo chown -R root: "$TLRC_DIR"
+sudo gzip "$TLRC_DIR/tldr.1"
+sudo cp -f "$TLRC_DIR/tldr" '/usr/bin/tldr'
+sudo cp -f "$TLRC_DIR/tldr.1.gz" '/usr/share/man/man1/tldr.1.gz'
+sudo mkdir -p '/usr/share/tldr'
+sudo cp -rf "$TLRC_DIR/completions" '/usr/share/tldr'
+sudo rm -rf "$TLRC_DIR"
+
 # NVM (Node Version Manager)
 NVM_VERSION="$(curl -sL https://api.github.com/repos/nvm-sh/nvm/releases | sed -n 's/.*\"tag_name\"\s*:\s*\"\(.*\)\".*/\1/p' | head -1)"
 curl -o- "https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh" | bash
