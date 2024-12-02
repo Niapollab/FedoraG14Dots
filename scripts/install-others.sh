@@ -23,6 +23,22 @@ install_firefox_extension() {
     rm '/tmp/firefox-extension.xpi'
 }
 
+github_browser_download_urls() {
+    # Gets list of browser download URLs of GitHub repository.
+    #
+    # Parameters:
+    #   owner_repo_pair (str): The owner and the name of GitHub repository.
+    #
+    # Returns:
+    #   str: List of browser download URLs.
+
+    local owner_repo_pair
+
+    owner_repo_pair="$1"
+
+    curl -sL "https://api.github.com/repos/$owner_repo_pair/releases" | sed -n 's/.*\"browser_download_url\"\s*:\s*\"\(.*\)\"/\1/p'
+}
+
 # Oh-my-zsh
 sh -c "$(curl -fsSL 'https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh')"
 
@@ -79,7 +95,7 @@ rm -f "$HOME/.gdbinit"
 mv -f "$(find ~ -name '.gef*' | head -1)" "$HOME/.gef.py"
 
 # PINCE (Cheat Engine alternative)
-PINCE_URL="$(curl -sL 'https://api.github.com/repos/korcankaraokcu/PINCE/releases' | sed -n 's/.*\"browser_download_url\"\s*:\s*\"\(.*\)\"/\1/p' | grep '.AppImage' | head -1)"
+PINCE_URL="$(github_browser_download_urls 'korcankaraokcu/PINCE' | grep '.AppImage' | head -1)"
 curl -sL "$PINCE_URL" -o '/tmp/Pince.AppImage'
 mkdir -p "$HOME/.local/pince.app" "$HOME/.local/bin"
 mv '/tmp/Pince.AppImage' "$HOME/.local/pince.app/Pince.AppImage"
@@ -90,13 +106,13 @@ EOF
 chmod +x "$HOME/.local/pince.app/Pince.AppImage" "$HOME/.local/bin/pince"
 
 # pwndbg
-PWNDBG_URL="$(curl -sL 'https://api.github.com/repos/pwndbg/pwndbg/releases' | sed -n 's/.*\"browser_download_url\"\s*:\s*\"\(.*\)\"/\1/p' | grep '.x86_64.rpm' | head -1)"
+PWNDBG_URL="$(github_browser_download_urls 'pwndbg/pwndbg' | grep '.x86_64.rpm' | head -1)"
 curl -sL "$PWNDBG_URL" -o '/tmp/pwndbg.rpm'
 sudo dnf install -y '/tmp/pwndbg.rpm'
 rm -f '/tmp/pwndbg.rpm'
 
 # Shadowsocks client
-SHADOWSOCKS_URL="$(curl -sL 'https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases' | sed -n 's/.*\"browser_download_url\"\s*:\s*\"\(.*\)\"/\1/p' | grep '.x86_64-unknown-linux-gnu.tar.xz' | head -1)"
+SHADOWSOCKS_URL="$(github_browser_download_urls 'shadowsocks/shadowsocks-rust' | grep '.x86_64-unknown-linux-gnu.tar.xz' | head -1)"
 SHADOWSOCKS_DIR='/tmp/shadowsocks'
 mkdir -p "$SHADOWSOCKS_DIR"
 curl -sL "$SHADOWSOCKS_URL" -o "$SHADOWSOCKS_DIR/shadowsocks.tar.xz"
@@ -105,7 +121,7 @@ install --mode=0755 --owner=root --group=root --preserve-timestamps -D --target-
 rm -rf "$SHADOWSOCKS_DIR"
 
 # Tun2socks
-TUN2SOCKS_URL="$(curl -sL 'https://api.github.com/repos/xjasonlyu/tun2socks/releases' | sed -n 's/.*\"browser_download_url\"\s*:\s*\"\(.*\)\"/\1/p' | grep '.linux-amd64.zip' | head -1)"
+TUN2SOCKS_URL="$(github_browser_download_urls 'xjasonlyu/tun2socks' | grep '.linux-amd64.zip' | head -1)"
 curl -sL "$TUN2SOCKS_URL" -o "/tmp/tun2socks.zip"
 unzip '/tmp/tun2socks.zip' -d '/tmp'
 rm -rf '/tmp/tun2socks.zip'
