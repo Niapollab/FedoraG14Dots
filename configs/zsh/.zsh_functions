@@ -244,3 +244,24 @@ keep-escapes() {
 
     script --flush --quiet --command "$command" '/dev/null'
 }
+
+tldr() {
+    # Print the tldr man page for a given command in Russian if it exists, and in English.
+    #
+    # Args:
+    #   command (str): The command to get the tldr man page for.
+    #
+    # Returns:
+    #   None
+
+    local ru_out
+    local en_out
+
+    ru_out="$(command tldr --language ru --color always "$@" 2>/dev/null)"
+    en_out="$(command tldr --language en --color always "$@")"
+
+    if [ -n "$ru_out" ] && [ "$ru_out" != "$en_out" ]; then
+        echo "$ru_out"
+    fi
+    echo "$en_out"
+}
