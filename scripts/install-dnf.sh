@@ -90,8 +90,6 @@ APPS=(
     # Gaming
     "portproton"
     "steam"
-    # Windows Hello
-    "howdy"
     # Camera utils
     "v4l2-ctl"
     # SSH autoconnect

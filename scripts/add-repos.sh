@@ -37,8 +37,6 @@ CORP_REPOS=(
     "zeno/scrcpy"
     # PortProton
     "boria138/portproton"
-    # Howdy
-    "principis/howdy"
     # WezTerm
     "wezfurlong/wezterm-nightly"
 )
