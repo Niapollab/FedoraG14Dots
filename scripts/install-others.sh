@@ -97,8 +97,8 @@ sudo chown -R root: "$TLRC_DIR"
 sudo gzip "$TLRC_DIR/tldr.1"
 sudo cp -f "$TLRC_DIR/tldr" '/usr/bin/tldr'
 sudo cp -f "$TLRC_DIR/tldr.1.gz" '/usr/share/man/man1/tldr.1.gz'
-sudo mkdir -p '/usr/share/tldr'
-sudo cp -rf "$TLRC_DIR/completions" '/usr/share/tldr'
+sudo cp -f "$TLRC_DIR/completions/tldr.bash" '/usr/share/bash-completion/completions/tldr.bash'
+sudo cp -f "$TLRC_DIR/completions/_tldr" '/usr/share/zsh/site-functions'
 sudo rm -rf "$TLRC_DIR"
 
 # NVM (Node Version Manager)
