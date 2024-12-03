@@ -92,6 +92,8 @@ APPS=(
     "steam"
     # Windows Hello
     "howdy"
+    # Camera utils
+    "v4l2-ctl"
     # SSH autoconnect
     "autossh"
 )
