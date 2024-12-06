@@ -164,3 +164,10 @@ Use `systemd-inhibit` with `<command>` to keep screen awake for a duration of ti
 ```shell
 systemd-inhibit <command>
 ```
+
+## Fix VirtualBox resolution
+
+Use `vboxmanage controlvm <vm-name> setvideomodehint <width> <height> <color-depth>` to change VM resolution while it is running.
+
+> [!NOTE]
+> For example `<width>` will be `1280`, `<height>` will be `800` and `<color-depth>` will be `32`.
