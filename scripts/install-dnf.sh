@@ -94,6 +94,8 @@ APPS=(
     "v4l2-ctl"
     # SSH autoconnect
     "autossh"
+    # Smart OOM killer
+    "earlyoom"
 )
 
 # Enable buildx plugin for Docker

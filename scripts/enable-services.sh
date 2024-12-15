@@ -15,6 +15,8 @@ SERVICES=(
     "syncthing-resume.service"
     # TuneD
     "tuned.service"
+    # Earlyoom
+    "earlyoom.service"
 )
 
 VIRT_SERVICES=(
