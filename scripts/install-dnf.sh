@@ -65,6 +65,8 @@ APPS=(
     "rustup"
     "go"
     "nodejs-npm"
+    # Git LFS plugin
+    "git-lfs"
     # Pano requirements
     "libgda-sqlite"
     # Media downloader
