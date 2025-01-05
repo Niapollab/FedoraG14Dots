@@ -39,6 +39,8 @@ CORP_REPOS=(
     "boria138/portproton"
     # WezTerm
     "wezfurlong/wezterm-nightly"
+    # Ventoy
+    "karlisk/ventoy"
 )
 
 for repo in "${CORP_REPOS[@]}"

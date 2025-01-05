@@ -98,6 +98,8 @@ APPS=(
     "autossh"
     # Smart OOM killer
     "earlyoom"
+    # Live USB writer
+    "ventoy"
 )
 
 # Enable buildx plugin for Docker
