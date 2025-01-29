@@ -57,6 +57,11 @@ if command -v zoxide 1>/dev/null 2>&1; then
   eval "$(zoxide init zsh --cmd cd)"
 fi
 
+# Change locale to Russian if it is not set but installed
+if [[ ! "$LANG" =~ 'ru_RU' ]] && locale -a | grep -q 'ru_RU.UTF-8'; then
+  export LANG='ru_RU.UTF-8'
+fi
+
 # Aliases
 source "$HOME/.zsh_aliases"
 
